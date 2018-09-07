@@ -1,8 +1,70 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html{
+	height: 100%;
 }
 
-a {
-  color: #00B7FF;
+body{
+	height: 100%;
+}
+
+.sidebar {
+	position: absolute;
+	top: 50px;
+	background-color: #676a70;
+	height: calc(100vh - 50px);
+	width:0px;
+	transition: width .5s;
+}
+
+.sidebar-open{
+	width: 200px;
+}
+
+.sidebar-toggler{
+	color: blue;
+}
+
+.sidebar-toggler{
+	border-radius: 50%;
+	padding: 5px 7px;
+}
+
+.sidebar-toggler:hover{
+	background: rgba(0,0,0,0.1);
+}
+
+.signup-butt, .signin-butt{
+	display:inline-flex;
+	border-radius: 10px;
+	padding: 3px 0px;
+}	
+
+.signup-butt:hover, .signin-butt:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+
+.signup-text, .signin-text{
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 0px;
+	transition: width .5s;
+}
+
+.signup-text-open, .signin-text-open{
+	width: 90px;
+}
+
+.top-nav{
+	display:flex;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 50px;
+	background-color: #fff;
+	padding: 5px 0px 0px 5px;
+	box-shadow: 0px 2px rgba(0,0,0,0.25)
+}
+
+.top-nav-icon{
+	padding: 0px 5px;
 }
