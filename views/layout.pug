@@ -17,13 +17,14 @@ html
 
 	body
 
-		aside#sidebar.sidebar
-		aside#top-nav.top-nav
-			.container-fluid.m-0
-				.row
-					.col-1
+		#modular.modular
+
+		.container-fluid
+			.row
+				aside#top-nav.top-nav
+					.col-md-1.col-sm-1
 						i#sidebar-toggler.sidebar-toggler.fas.fa-bars.fa-2x
-					.col-md-3.col-sm-4.col-5.offset-md-8.offset-sm-7.offset-6.p-0
+					.col-md-3.col-sm-4.offset-md-8.offset-sm-7.p-0
 						#signin-butt.signin-butt.float-right
 							i.top-nav-icon.fas.fa-sign-in-alt.fa-2x
 							div#signin-text.signin-text
@@ -35,6 +36,42 @@ html
 								h4
 									|Sign Up
 
-		#main-content.container-fluid
-			
-			block content
+		aside#sidebar.sidebar
+			h2.sidebar-text
+				a(href="/")
+					| Home
+			hr
+			h4.sidebar-header
+				|Account
+			h2.sidebar-text
+				a(href="/")
+					| Sign In
+			h2.sidebar-text
+				a(href="/")
+					| Sign Up
+			hr
+			h4.sidebar-header
+				| Listings
+			h2.sidebar-text
+				a(href="/listings")
+					| View Listings
+			h2.sidebar-text
+				a(href="/")
+					| Create Listings
+			h2.sidebar-text
+				a(href="/")
+					| My Listings
+			hr
+			h2.sidebar-text
+				a(href="/")
+					|About Us
+			h2.sidebar-text
+				a(href="/")
+					|Contact Us
+
+		.container-fluid.m-0
+			.row
+				#main-content.main-content
+					.row
+						.col-12
+							block content
