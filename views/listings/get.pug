@@ -3,3 +3,7 @@ extends ../layout
 block content
 	h1
 		|listings
+
+	for d in data
+		p
+			| #{d.coursecode}	
