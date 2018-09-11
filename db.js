@@ -14,9 +14,18 @@ var initOptions = {
 
 var pgp = require('pg-promise')(initOptions);
 
-var db = pgp('postgresql://GaudonB:password@localhost:5432/webd4201_db');
+var db =  {
+    connection: pgp('postgresql://GaudonB:password@localhost:5432/webd4201_db'),
+    getListings: function(){
+        return this.connection.task(async(t) =>{
+            let a = await t.any('SELECT * from courses');
+            return a;
+        })
+    }
 
-db.connect()
+};
+
+db.connection.connect()
     .then(obj => {
         obj.done(); // success, release the connection;
     })
