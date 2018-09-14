@@ -13,15 +13,18 @@ body{
 	overflow-x: hidden;
 }
 
+form{
+	background-color: rgb(235,235,235);
+}
+
 .disable-h-scroll{
 	overflow-y: hidden;
 }
 
 .sidebar{
-	z-index: 9975;
-	position: absolute;
-	top: 50px;
-	height: calc(100vh - 50px);
+	z-index: 9981;
+	position: fixed;
+	height: 100vh;
 	width:0px;
 	transition: width .5s;
 	background-color: #676a70;
@@ -42,7 +45,6 @@ body{
 
 .sidebar-text{
 	margin: 0px;
-	
 	transition: padding .3s;
 }
 
@@ -77,23 +79,24 @@ body{
 	background: rgba(0,0,0,0.1);
 }
 
-.signup-butt, .signin-butt{
+.session-butt{
 	display:inline-flex;
 	border-radius: 10px;
 	padding: 3px 0px;
 }
 
 @media screen and (max-width: 576px){
-	.signup-butt, .signin-butt{
+	.session-butt{
 		display: none;
 	} 
 }
 
-.signup-butt:hover, .signin-butt:hover{
+.session-butt:hover{
 	background-color:rgba(0,0,0,0.1);
+	cursor:pointer;
 }
 
-.signup-text, .signin-text{
+.session-text{
 	display: inline-block;
 	overflow: hidden;
 	white-space: nowrap;
@@ -101,14 +104,14 @@ body{
 	transition: width .5s;
 }
 
-.signup-text-open, .signin-text-open{
+.session-text-open{
 	width: 90px;
 }
 
 .top-nav{
 	z-index: 9976;
 	display:inline-flex;
-	position: sticky;
+	position: fixed;
 	top: 0;
 	width: 100%;
 	height: var(--top-nav-height);
@@ -129,17 +132,16 @@ body{
 }
 
 .modular{
-	z-index: -1000;
-	height: 100vh;
-	width: 100vw;
-	position: absolute;
-	transition: background-color .5s;
-	background-color: rgba(0,0,0,0);
+	z-index: 9980;
+	display: none;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	background-color: rgba(0,0,0,.75);
 }
 
 .modular-show{
-	background-color: rgba(0,0,0,.75);
-	z-index: 9974;
+	display: block;
 }
 
 .welcome-message{
@@ -166,12 +168,41 @@ body{
 	top: calc((var(--quick-search-height) - 220px) / 2  );
 	padding: 10px;
 	margin: auto;
-	background-color: rgb(240,240,240);
-	border: 2px solid #888;
-	border-radius: 5px;
-	box-shadow: 0px 0px 25px #000;
+	border-radius: .5em;
+	box-shadow: .7em .7em 2em .3em #000;
 }
 
-.quick-search form input[type="text"]{
-	background-color: rgb(220,220,220);
-}	
+.login-container{
+	z-index: 9981;
+	width:100vw;
+	height: auto;
+	display: inline-flex;
+	position: fixed;
+	top: 10em;
+}
+
+.login-container *{
+	display: none;
+}
+
+.login-container-open *{
+	display: block;
+}
+
+.login-form{
+	margin: auto;
+	width: 25em;
+	height: auto;
+}
+
+.login-form form{
+	width: 100%;
+	padding: 1em 2em;
+	border-radius: .5em;
+	box-shadow: .7em .7em 2em .3em #000;
+}
+
+.close-login{
+	cursor: pointer;
+}
+

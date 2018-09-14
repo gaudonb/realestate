@@ -1,26 +1,35 @@
 $(function(){
 	$("#sidebar-toggler").click(function(){
-		if($("#sidebar").hasClass("sidebar-open")){
-			$("#sidebar").removeClass("sidebar-open");
-			$("#modular").removeClass("modular-show");
-			$("body").removeClass("disable-h-scroll")
-		}else{
-			$("#sidebar").addClass("sidebar-open");	
-			$("#modular").addClass("modular-show");	
-			$("body").addClass("disable-h-scroll")
-		}	
+		$("#sidebar").toggleClass("sidebar-open");
+		$("#modular").toggleClass("modular-show");
+		$("body").toggleClass("disable-h-scroll");
 	});
 
-	$("#signup-butt").hover(function(){
-		$("#signup-text").addClass("signup-text-open");
-	},function(){
-		$("#signup-text").removeClass("signup-text-open");
+	$("#close-login").click(function(){
+		$("#login-container").toggleClass("login-container-open");
+		$("#modular").toggleClass("modular-show");
 	});
 
-	$("#signin-butt").hover(function(){
-		$("#signin-text").addClass("signin-text-open");
+	$("#signup-butt")
+	.hover(function(){
+		$("#signup-text").addClass("session-text-open");
 	},function(){
-		$("#signin-text").removeClass("signin-text-open");
+		$("#signup-text").removeClass("session-text-open");
+	});
+
+
+	$("#signin-butt")
+	.hover(function(){
+		$("#signin-text").addClass("session-text-open");
+	},function(){
+		$("#signin-text").removeClass("session-text-open");
+	}).click(function(){
+		$("#login-container").toggleClass("login-container-open");
+		$("#modular").toggleClass("modular-show");
+	});
+
+	$("#login-form").submit(function(){
+		return false;
 	});
 });
 
