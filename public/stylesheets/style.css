@@ -125,6 +125,7 @@ form{
 }
 
 .main-content{
+	top: var(--top-nav-height);
 	position: relative;
 	width: 100%;
 	height: 100%;

@@ -8,6 +8,11 @@ router.get('/', function(req, res, next) {
   	res.render('index', { title: 'Welcome' });
 });
 
+//listings
 router.get('/listings', listings_controller.getListings);
+
+router.get('/listings/create',  listings_controller.newListing);
+router.post('listings/create', listings_controller.createListings);
+ 
 
 module.exports = router;

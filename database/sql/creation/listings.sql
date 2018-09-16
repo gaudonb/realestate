@@ -1,7 +1,0 @@
-DROP TABLE IF EXISTS listings;
-
-CREATE TABLE listings (
-  	ID SERIAL PRIMARY KEY,
-  	userId INTEGER,
- 	title VARCHAR
-);

@@ -4,11 +4,18 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-
 var indexRouter = require('./routes/index');
-var apiRouter = require('./routes/api');
 
 var app = express();
+
+// mongoose connection
+var mongoose = require('mongoose');
+var mongoDB = 'mongodb://gaudonb:password1@ds119702.mlab.com:19702/realestate'
+mongoose.connect(mongoDB);
+
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views/.'));
@@ -21,7 +28,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
