@@ -1,0 +1,29 @@
+extends ../layout
+
+block content	
+
+	#login-container.login-container
+		.login-form
+			.container-fluid.m-0
+				.row
+					form#login-form(action='/api/listings')
+						h2
+							| Register
+						hr
+						h5
+							|Username
+						.form-group
+							input#username.form-control(type='text', name='name', placeholder='Username')
+						h5
+							|Email
+						.form-group
+							input#email.form-control(type='text', name='name', placeholder='Email')
+						h5
+							|Password
+						.form-group
+							input#password.form-control(type='password', name='description', placeholder='Password')
+						h5
+							|Confirm Password
+						.form-group
+							input#confirmPassword.form-control(type='password', name='description', placeholder='Confirm Password')
+						input.btn.btn-outlined.btn-primary(type='submit', name='submit', value='Submit')

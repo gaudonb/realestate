@@ -1,0 +1,20 @@
+extends ../layout
+
+block content	
+
+	#login-container.login-container
+		.login-form
+			.container-fluid.m-0
+				.row
+					form#login-form(action='/api/listings')
+						h2
+							|Login
+						h5
+							|Username
+						.form-group
+							input#userName.form-control(type='text', name='name', placeholder='Username')
+						h5
+							|Password
+						.form-group
+							input#description.form-control(type='password', name='description', placeholder='Password')
+						input.btn.btn-outlined.btn-primary(type='submit', name='submit', value='Submit')

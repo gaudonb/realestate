@@ -11,7 +11,7 @@ var app = express();
 // mongoose connection
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://gaudonb:password1@ds119702.mlab.com:19702/realestate'
-mongoose.connect(mongoDB);
+mongoose.connect(mongoDB,{useNewUrlParser: true});
 
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;

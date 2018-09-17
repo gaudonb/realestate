@@ -29,12 +29,14 @@ html
 							i.top-nav-icon.fas.fa-sign-in-alt.fa-2x
 							div#signin-text.session-text
 								h4
-									|Sign In
+									a(href="/login")
+										|Sign In
 						#signup-butt.session-butt.float-right
 							i.top-nav-icon.fas.fa-user-plus.fa-2x
 							div#signup-text.session-text
 								h4
-									|Sign Up
+									a(href="/register")
+										|Sign Up
 
 		aside#sidebar.sidebar
 			h2.sidebar-text
@@ -75,16 +77,3 @@ html
 					.row
 						.col-12
 							block content
-		#login-container.login-container
-			.login-form
-				.container-fluid.m-0
-					.row
-						form#login-form(action='/api/listings')
-							i#close-login.close-login.fas.fa-times-circle.float-right
-							h3
-								|Login
-							.form-group
-								input#userName.form-control(type='text', name='name', placeholder='Username')
-							.form-group
-								input#description.form-control(type='password', name='description', placeholder='Password')
-							input.btn.btn-outlined.btn-primary(type='submit', name='submit', value='Submit')

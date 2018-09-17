@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var ListingSchema = new Schema({
 	name: {type: String, ref: 'Name', required: true},
 	title: {type: String, required: true},
-	date: {type: String, required: true}
+	userId: {type:Schema.Types.ObjectId, ref: 'User'},
 },{timestamps : {createdAt: 'createdAt', updatedAt: 'updatedAt'}});
 
 ListingSchema
